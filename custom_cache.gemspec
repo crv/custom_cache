@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = CustomCache::VERSION
   s.authors     = ['Chirag Viradiya']
   s.email       = ['chirag.viradiya@gmail.com']
-  s.homepage    = 'TODO'
+  s.homepage    = 'http://rubygems.org/gems/custom_cache'
   s.summary     = 'A wrapper over Rails cache to provide request and session cache.'
   s.description = 'A wrapper over Rails cache to provide request and session cache.'
 
@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '~> 4.0.10'
 
   s.add_development_dependency 'sqlite3'
+  s.license       = 'MIT'
 end
