@@ -1,0 +1,3 @@
+module CustomCache
+  VERSION = '0.0.1'
+end
