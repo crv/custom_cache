@@ -1,0 +1,2 @@
+$('#request_store_notice').html("<%= flash[:notice] %>");
+$('#request_store_value').html("<%= Rails.request_cache.read(params[:request_store][:request_key]) %>")

@@ -1,3 +1,4 @@
+require 'jquery-rails'
 require 'custom_cache/acts_as_custom_cache'
 require 'custom_cache/base'
 require 'custom_cache/request_cache'

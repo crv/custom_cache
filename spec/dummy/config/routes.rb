@@ -5,6 +5,19 @@ Dummy::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  resources :home
+
+  resources :request_store do
+    post :store, on: :collection
+    get :fetch, on: :collection
+  end
+
+  resources :session_store do
+    post :store, on: :collection
+    get :fetch, on: :collection
+  end
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

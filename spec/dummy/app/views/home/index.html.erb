@@ -1,0 +1,43 @@
+<div>
+  <h4>Example</h4>
+  <div style="margin-top: 20px;padding: 5px;line-height: 25px;">
+    <%= form_for :request_store,  url: store_request_store_index_path, remote:true do |f| %>
+        <fieldset>
+          <div id="request_store_notice"></div>
+          <div id="request_store_value"></div>
+
+          <div>
+            <h4>Request Cache:</h4>
+            <div>
+              <span>Key <%= f.text_field :request_key %></span><span>Value <%= f.text_field :request_value %></span>
+            </div>
+          </div>
+          <div>
+            <%= f.submit :Store %>
+            <%= link_to :Fetch,  'javascript:void(0)', data: {path: fetch_request_store_index_path}, id: 'fetch_request_store_value' %>
+          </div>
+        </fieldset>
+    <% end %>
+  </div>
+
+
+
+  <div style="margin-top: 20px;padding: 5px;line-height: 25px;">
+    <%= form_for :session_store,  url: store_session_store_index_path, remote:true do |f| %>
+        <fieldset>
+          <div id="session_store_notice"></div>
+          <div id="session_store_value"></div>
+        <div>
+          <h4>Session Cache:</h4>
+          <div>
+            <span>Key <%= f.text_field :session_key %></span><span>Value <%= f.text_field :session_value %></span>
+          </div>
+        </div>
+        <div>
+          <%= f.submit :Store %>
+        </div>
+        </fieldset>
+    <% end %>
+  </div>
+</div>
+
