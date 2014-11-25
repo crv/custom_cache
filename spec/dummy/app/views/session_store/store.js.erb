@@ -1,0 +1,2 @@
+$('#session_store_notice').html("<%= flash[:notice] %>");
+$('#session_store_value').html("<%= Rails.session_cache.read(params[:session_store][:session_key]) %>")
