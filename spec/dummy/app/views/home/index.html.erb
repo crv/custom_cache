@@ -35,6 +35,8 @@
         </div>
         <div>
           <%= f.submit :Store %>
+          <%= link_to :Fetch,  'javascript:void(0)', data: {path: fetch_session_store_index_path}, id: 'fetch_session_store_value' %>
+          <%= link_to :Reset_Session,  'javascript:void(0)', data: {path: reset_session_store_index_path}, id: 'fetch_session_store_value' %>
         </div>
         </fieldset>
     <% end %>

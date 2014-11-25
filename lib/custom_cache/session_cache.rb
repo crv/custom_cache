@@ -1,20 +1,19 @@
 module CustomCache
 
-    class SessionCache < Base
+    class SessionCache < ScopeCache
 
       include Singleton
 
-      attr_accessor :session_id
-
       def self.create(session_id)
-        if self.instance.session_id.present? && self.instance.session_id != session_id
-          self.clear!
-        end
-        self.instance.session_id = session_id
+        Thread.current[:session_id] = session_id
       end
 
-      def cache_key
-        "_session_#{session_id}_cache" if session_id.present?
+      def scope
+        "session#{Thread.current[:session_id]}_cache" if Thread.current[:session_id].present?
+      end
+
+      def self.clear!
+        self.instance.clear
       end
 
     end

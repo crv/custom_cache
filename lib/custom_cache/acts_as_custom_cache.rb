@@ -9,11 +9,11 @@ module CustomCache
 
     module ClassMethods
 
-      def session_cache
+      def session_cache(options = {})
          CustomCache::SessionCache.instance
       end
 
-      def request_cache
+      def request_cache(options = {})
         CustomCache::RequestCache.instance
       end
 

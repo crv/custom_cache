@@ -13,4 +13,16 @@ $(document).ready(function() {
            }
         });
     });
+
+    $(document).off('click', '#fetch_session_store_value');
+    $(document).on('click', '#fetch_session_store_value', function () {
+        $.ajax({
+            url: $(this).data('path'),
+            dataType: 'script',
+            data: {
+                format: 'js',
+                session_key: $('#session_store_session_key').val()
+            }
+        });
+    });
 });

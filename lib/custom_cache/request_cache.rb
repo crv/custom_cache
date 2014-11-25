@@ -1,17 +1,19 @@
 module CustomCache
 
-  class RequestCache < Base
+  class RequestCache < ScopeCache
 
     include Singleton
 
-    attr_accessor :request_id
-
     def self.create(request_id)
-      self.instance.request_id = request_id
+      Thread.current[:request_id] = request_id
     end
 
-    def cache_key
-      "_request_#{request_id}_cache" if request_id.present?
+    def scope
+      "_request_#{Thread.current[:request_id]}_cache" if Thread.current[:request_id].present?
+    end
+
+    def self.clear!
+      self.instance.clear
     end
 
   end

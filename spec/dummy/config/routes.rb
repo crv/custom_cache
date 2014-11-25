@@ -15,6 +15,7 @@ Dummy::Application.routes.draw do
   resources :session_store do
     post :store, on: :collection
     get :fetch, on: :collection
+    get :reset, on: :collection
   end
 
 
