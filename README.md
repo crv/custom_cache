@@ -1,5 +1,7 @@
 # custom_cache
 
+[![Gem Version](https://badge.fury.io/rb/custom_cache.svg)](http://badge.fury.io/rb/custom_cache)
+
 A wrapper over Rails cache to provide request and session cache
 
 ## Installation
